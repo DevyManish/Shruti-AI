@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function App() {
+function Chatbot() {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState(null);
-
   const handleQuestionChange = (e) => {
     setQuestion(e.target.value);
   };
@@ -44,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default Chatbot;
