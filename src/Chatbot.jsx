@@ -30,7 +30,7 @@ const Chatbot = () => {
             const { conversation_id, response: botResponse } = response.data;
 
             setConversation([...conversation, { input, output: botResponse }]);
-
+document.title = input;
             // Speak the bot response
             const synth = window.speechSynthesis;
             const utterance = new SpeechSynthesisUtterance(botResponse);
@@ -67,7 +67,7 @@ const Chatbot = () => {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="sticky bottom-0">
+                            <div className="sticky bottom-0 z-10">
                                 <form onSubmit={handleSubmit}>
                                     <input
                                         type="text" value={input} onChange={handleInput}
@@ -78,7 +78,7 @@ const Chatbot = () => {
                                     />
                                     <button type="button">
                                         <svg
-                                            className="w-5 h-5 text-gray-500 origin-center transform rotate-90"
+                                            className="hidden md:block w-5 h-5 text-gray-500 origin-center transform rotate-90"
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20"
                                             fill="currentColor"
