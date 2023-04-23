@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Footer() {
+const Footer = () => {
+
     return (
         <footer className="text-gray-600 body-font">
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
