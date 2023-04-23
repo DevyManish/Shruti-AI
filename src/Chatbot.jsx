@@ -30,7 +30,7 @@ const Chatbot = () => {
             const { conversation_id, response: botResponse } = response.data;
 
             setConversation([...conversation, { input, output: botResponse }]);
-document.title = input;
+            document.title = input;
             // Speak the bot response
             const synth = window.speechSynthesis;
             const utterance = new SpeechSynthesisUtterance(botResponse);

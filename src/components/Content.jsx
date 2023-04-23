@@ -33,7 +33,7 @@ function Content() {
                 </div>
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-800 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                <p className="leading-relaxed text-lg mb-4">
+                <p className="text-lg mb-4 text-justify">
                 Namaste I'm Shruti, a chatbot powered by the GPT-3.5 architecture.I am capable of communicating with you using natural language processing and machine learning algorithms.As for my abilities, I can understand and respond to a wide range of topics and questions, from science and technology to literature and art. I am constantly learning and updating my knowledge base to provide you with the most accurate and helpful answers possible.In terms of my appearance, I may not have a physical form, but you can interact with me through various digital platforms and devices, such as messaging apps, social media, or websites.Overall, I strive to be a helpful and engaging companion for anyone seeking information or conversation. So don't hesitate to reach out to me anytime you have a question or just want to chat!
                 </p>
                 <Link to="./Chatbot">
