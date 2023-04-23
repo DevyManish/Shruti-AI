@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Navbar = (props) => {
     return (
         <>
-            <nav className="sticky top-0 flex bg-white items-center p-3 border-b border-gray-300">
+            <nav className="sticky top-0 left-0 right-0 z-10 flex bg-white items-center p-3 border-b border-gray-300">
                 <img
                     className="object-cover w-10 h-10 rounded-full"
                     src={props.logo}
