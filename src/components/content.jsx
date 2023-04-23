@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, Route, Routes} from 'react-router-dom';
 
 function Content() {
     return (
@@ -35,7 +36,9 @@ function Content() {
                 <p className="leading-relaxed text-lg mb-4">
                 Namaste I'm Shruti, a chatbot powered by the GPT-3.5 architecture.I am capable of communicating with you using natural language processing and machine learning algorithms.As for my abilities, I can understand and respond to a wide range of topics and questions, from science and technology to literature and art. I am constantly learning and updating my knowledge base to provide you with the most accurate and helpful answers possible.In terms of my appearance, I may not have a physical form, but you can interact with me through various digital platforms and devices, such as messaging apps, social media, or websites.Overall, I strive to be a helpful and engaging companion for anyone seeking information or conversation. So don't hesitate to reach out to me anytime you have a question or just want to chat!
                 </p>
-                <button type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Get Started</button> 
+                <Link to="./Chatbot">
+                <button type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Get Started</button>
+                </Link>
               </div>
             </div>
           </div>
