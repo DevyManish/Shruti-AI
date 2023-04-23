@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Navbar from "./components/Navbar";
 
-function Test(props) {
+const Chatbot = () => {
 
     const [input, setInput] = useState("");
     const [conversation, setConversation] = useState([]);
@@ -41,25 +42,14 @@ function Test(props) {
         setInput("");
     };
 
-
-
-
     return (
         <>
-            <div className="container flex justify-center items-center">
-                <div className="w-11/12 border rounded">
+            <div className="flex justify-center items-center mx-auto">
+                <div className="w-11/12 border rounded ">
                     <div>
                         <div className="w-full">
-                            <div className="relative flex items-center p-3 border-b border-gray-300">
-                                <img
-                                    className="object-cover w-10 h-10 rounded-full"
-                                    src="https://i.postimg.cc/vBd2MN55/5cb480cd5f1b6d3fbadece79.png"
-                                    alt="username"
-                                />
-                                <span className="block ml-2 font-bold text-gray-600">{props.name}</span>
-                                <span className="absolute w-3 h-3 bg-green-600 rounded-full left-10 top-3"></span>
-                            </div>
-                            <div className=" w-full p-6 overflow-y-auto h-[40rem]">
+                            <Navbar name="Shruti" logo="https://i.postimg.cc/vBd2MN55/5cb480cd5f1b6d3fbadece79.png" />
+                            <div className="relative w-full p-6 overflow-y-auto h-[40rem]">
                                 <ul className="space-y-2">
                                     {conversation.map((item, index) => (
                                         <React.Fragment key={index}>
@@ -77,32 +67,26 @@ function Test(props) {
                                     ))}
                                 </ul>
                             </div>
-
-                            <div className="flex justify-between w-full p-3 border-t border-gray-300">
+                            <div className="sticky bottom-0">
                                 <form onSubmit={handleSubmit}>
-                                    <div>
-                                        <input
-                                            type="text" value={input} onChange={handleInput}
-                                            placeholder="Message"
-                                            className="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
-                                            name="message"
-                                            required=""
-                                        />
-                                    </div>
-                                    <div>
-                                        <button type="submit">
-                                            <svg
-                                                className="w-5 h-5 text-gray-500 origin-center transform rotate-90"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                            >
-                                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                                            </svg>
-                                        </button>
-                                    </div>
+                                    <input
+                                        type="text" value={input} onChange={handleInput}
+                                        placeholder="Message"
+                                        className=" w-11/12 py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
+                                        name="message"
+                                        required=""
+                                    />
+                                    <button type="button">
+                                        <svg
+                                            className="w-5 h-5 text-gray-500 origin-center transform rotate-90"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                        </svg>
+                                    </button>
                                 </form>
-
                             </div>
                         </div>
                     </div>
@@ -112,4 +96,4 @@ function Test(props) {
     )
 }
 
-export default Test
+export default Chatbot
