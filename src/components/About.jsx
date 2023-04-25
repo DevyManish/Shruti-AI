@@ -45,7 +45,7 @@ const About = () => {
                                         Manish Gupta
                                     </h2>
                                     <h3 className="text-gray-500 mb-3">Web Developer</h3>
-                                    <p className="mb-4">
+                                    <p className="mb-4 text-justify">
                                         Passionate web developer with a love for web3.0, AI, and emerging technologies. I create stunning websites and custom web applications.
                                     </p>
                                     <span className="inline-flex">
@@ -104,7 +104,7 @@ const About = () => {
                                         Pratyush Singha
                                     </h2>
                                     <h3 className="text-gray-500 mb-3">Web Developer</h3>
-                                    <p className="mb-4">
+                                    <p className="mb-4 text-justify">
                                         Talented web developer with a passion for the latest technologies.We create stunning websites and custom web applications that push the boundaries of what's possible.
                                     </p>
                                     <span className="inline-flex">
