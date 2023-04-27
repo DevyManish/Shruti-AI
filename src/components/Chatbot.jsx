@@ -7,7 +7,7 @@ const Chatbot = () => {
     const [input, setInput] = useState("");
     const [conversation, setConversation] = useState([]);
 
-    const programmingKeywords = ["programming", "code", "coding", "program", "developer"];
+    const programmingKeywords = ["programming", "code", "coding", "program", "developer", "c", "java", "python", "html", "javascript", "react"];
 
     const handleInput = (e) => {
         setInput(e.target.value);
@@ -31,13 +31,12 @@ const Chatbot = () => {
             const response = await axios.request(options);
             const { conversation_id, response: botResponse } = response.data;
 
-            // Check if input contains programming keywords
             const containsProgrammingKeyword = programmingKeywords.some(keyword => input.toLowerCase().includes(keyword));
             const output = containsProgrammingKeyword ? `${botResponse}` : botResponse;
 
             setConversation([...conversation, { input, output }]);
             document.title = input;
-            // Speak the bot response
+
             const synth = window.speechSynthesis;
             const utterance = new SpeechSynthesisUtterance(botResponse);
             synth.speak(utterance);
