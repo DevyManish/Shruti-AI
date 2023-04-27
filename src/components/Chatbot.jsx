@@ -7,6 +7,8 @@ const Chatbot = () => {
     const [input, setInput] = useState("");
     const [conversation, setConversation] = useState([]);
 
+    const programmingKeywords = ["programming", "code", "coding", "program", "developer"];
+
     const handleInput = (e) => {
         setInput(e.target.value);
     };
@@ -29,7 +31,11 @@ const Chatbot = () => {
             const response = await axios.request(options);
             const { conversation_id, response: botResponse } = response.data;
 
-            setConversation([...conversation, { input, output: botResponse }]);
+            // Check if input contains programming keywords
+            const containsProgrammingKeyword = programmingKeywords.some(keyword => input.toLowerCase().includes(keyword));
+            const output = containsProgrammingKeyword ? `${botResponse}` : botResponse;
+
+            setConversation([...conversation, { input, output }]);
             document.title = input;
             // Speak the bot response
             const synth = window.speechSynthesis;
@@ -41,6 +47,7 @@ const Chatbot = () => {
 
         setInput("");
     };
+
 
     return (
         <>
@@ -60,7 +67,13 @@ const Chatbot = () => {
                                             </li>
                                             <li className="flex justify-end">
                                                 <div className="relative max-w-xl px-4 py-2 text-gray-700 bg-gray-100 rounded shadow">
-                                                    <span className="block">{item.output}</span>
+                                                    <span className="block">
+                                                        {programmingKeywords.some((keyword) => item.input.toLowerCase().includes(keyword.toLowerCase())) ? (
+                                                            <code>{item.output}</code>
+                                                        ) : (
+                                                            item.output
+                                                        )}
+                                                    </span>
                                                 </div>
                                             </li>
                                         </React.Fragment>
@@ -70,9 +83,11 @@ const Chatbot = () => {
                             <div className="sticky bottom-0 z-10">
                                 <form onSubmit={handleSubmit}>
                                     <input
-                                        type="text" value={input} onChange={handleInput}
+                                        type="text"
+                                        value={input}
+                                        onChange={handleInput}
                                         placeholder="Message"
-                                        className=" w-11/12 py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
+                                        className="w-11/12 py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
                                         name="message"
                                         required=""
                                     />
